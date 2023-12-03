@@ -1,2 +1,5 @@
 # docker_learning
-Road for learning how to run postgres and dbadmin inside a container
+## How to run :
+- make up
+- make init-db
+- make show-mytable
