@@ -9,7 +9,7 @@
 ### if you want to create snd insert directly in terminal follow these commands instead:
 - docker-compose up -d
 - Connect to a Database:
-    - psql -h hostname -U username -d database
+    - psql -h hostname -p portnumber -U username -d database
 - List Databases:
     - \l
 - Connect to a Different Database:
@@ -26,3 +26,11 @@
     - SELECT * FROM table_name;
 - Exit psql:
     - \q
+
+### If you want to write everything exactly in your terminal:
+- psql -h hostname -U username -d postgres -c "CREATE DATABASE new_database;"
+- psql -h hostname -U username -p portnumber -d new_database -c "CREATE TABLE mytable (id SERIAL PRIMARY KEY, name VARCHAR(255));"
+- psql -h hostname -U username -p portnumber -d new_database -c "INSERT INTO mytable (name) VALUES ('John Doe');"
+- psql -h hostname -U username -d new_database -c "\dt"
+- psql -h hostname -U username -d new_database -c "SELECT * FROM mytable;"
+- psql -h hostname -U username -d postgres -c "DROP DATABASE database_name;"
